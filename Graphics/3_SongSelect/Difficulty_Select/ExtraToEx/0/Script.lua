@@ -7,11 +7,11 @@
 --func:SetScale(xscale, yscale, "filename");
 --func:SetColor(r, g, b, "filename");
 
-local xPos = 1292
-local yPos = 405
+local xPos = 1365
+local yPos = 925
 
-local rectWidth = 197
-local rectHeight = 355
+local rectWidth = 540
+local rectHeight = 140
 
 local swipeWidth = 10
 local swipeLength = 187
@@ -24,7 +24,7 @@ local drawSpeed = 0
 function init()
     animeDraw = 0
     swipeDraw = 0
-    drawSpeed = 197 / 0.15
+    drawSpeed = 540 / 0.15
 
     func:AddGraph("Diffs.png")
     func:AddGraph("Swipe.png")
@@ -41,9 +41,9 @@ function update()
 end
 
 function draw()
-    -- Draw Extra
-    func:DrawRectGraph(xPos + animeDraw, yPos, rectWidth + animeDraw, 0, math.max(rectWidth - animeDraw, 0), rectHeight, "Diffs.png")
     -- Draw Extreme
+    func:DrawRectGraph(xPos + animeDraw, yPos, 0 + animeDraw, rectHeight, math.max(rectWidth - animeDraw, 0), rectHeight, "Diffs.png")
+    -- Draw Extra
     func:DrawRectGraph(xPos, yPos, 0, 0, math.min(animeDraw, rectWidth), rectHeight, "Diffs.png")
 
     -- Draw Swipe
